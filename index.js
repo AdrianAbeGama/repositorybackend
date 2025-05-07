@@ -1,21 +1,14 @@
-// Archivo index.js - Punto de entrada de la aplicación
+require('dotenv').config()
+const http= require('http')
 
-// Importaciones de módulos (puedes añadir los que necesites)
-// const express = require('express');
-
-// Configuración inicial
-console.log('Aplicación iniciada');
-
-// Función principal
-function main() {
-  console.log('Función principal ejecutada');
-  // Aquí puedes añadir la lógica principal de tu aplicación
+function requestController(){
+    console.log('Bienvenidos al curso')
 }
 
-// Ejecución
-main();
+const server=http.createServer(requestController)
 
-// Exportación de módulos (si es necesario)
-module.exports = {
-  main
-};
+const PORT=process.env.PORT
+
+server.listen(PORT, function(){
+    console.log("Aplicacion corriendo en: " + PORT)
+})
